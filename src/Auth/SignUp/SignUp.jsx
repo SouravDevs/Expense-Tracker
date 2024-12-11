@@ -18,7 +18,7 @@ const SignUp = () => {
   const [step, setStep] = useState(1)
 
   // Get User data from localStorage
-  const userData = JSON.parse(localStorage.getItem('userData'))
+  const userData = localStorage.getItem('userData') ? JSON.parse(localStorage.getItem('userData')) : []
 
   // Open & Close SuccssModal
   const [isOpen, setIsOpen] = useState(false)
