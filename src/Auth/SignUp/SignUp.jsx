@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createUser } from '../../store/expense_Slice';
 import SuccessModal from '../../components/Modals/SuccessModal';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
   // Create variables
@@ -76,15 +76,16 @@ const SignUp = () => {
   return (
    <>
     <div className='w-full max-w-lg px-8'>
-        <h1 className='text-2xl'>Create an account by your email</h1>
+        <h1 className='text-2xl'>Create an account by your username</h1>
         {/* Form */}
         {/* Step 1 */}
        {
         step === 1 && (
           <div className='w-full mt-7 flex flex-col gap-5'>
-          <input value={email} onChange={(e) => setEmail(e.target.value)} className='w-full max-w-lg py-1 pl-3 font-medium text-gray-900 rounded-md bg-gray-300 placeholder:text-gray-800 placeholder:italic' type="text" placeholder='123@example.com' />
+          <input value={email} onChange={(e) => setEmail(e.target.value)} className='w-full max-w-lg py-1 pl-3 font-medium text-gray-900 rounded-md bg-gray-300 placeholder:text-gray-800 placeholder:italic' type="text" placeholder='username' />
           <input value={password} onChange={(e) => setPassword(e.target.value)} className='w-full max-w-lg py-1 pl-3 font-medium text-gray-900 rounded-md bg-gray-300 placeholder:text-gray-800 placeholder:italic' type="text" placeholder='password' />
             <button onClick={handleNextStep} className='text-xl bg-gray-900 text-white py-1 rounded-md hover:opacity-90 active:opacity-100'>Next</button>
+            <p className='text-[18px] text-center'>Already have an account? <Link className='font-semibold' to='/login' >Login</Link> </p>
       </div>
         )
        }

@@ -3,7 +3,7 @@ import Expense_Modal from '../Expense Modal/Expense_Modal'
 import Income_Modal from '../Income Modal/Income_Modal'
 
 
-const Save_Modal = ({showSaveModal, closeSaveModal}) => {
+const Save_Modal = ({showSaveModal, closeSaveModal, data}) => {
     const [showExpenseModal, setShowExpenseModal] = useState(false)
     const [showIncomeModal, setShowIncomeModal] = useState(false)
      // Open and Close Expense Modal
@@ -33,8 +33,8 @@ const Save_Modal = ({showSaveModal, closeSaveModal}) => {
       <div></div>
     </div>
   </div>
-    <Expense_Modal showExpenseModal={showExpenseModal} closeExpenseModal={closeExpenseModal} />
-    <Income_Modal showIncomeModal={showIncomeModal} closeIncomeModal={closeIncomeModal} />
+    <Expense_Modal data={data} showExpenseModal={showExpenseModal} closeExpenseModal={closeExpenseModal} />
+    <Income_Modal data={data} showIncomeModal={showIncomeModal} closeIncomeModal={closeIncomeModal} />
    </>
 
   )
